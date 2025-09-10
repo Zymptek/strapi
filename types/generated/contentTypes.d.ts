@@ -373,6 +373,145 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiLoginFormFieldLoginFormField
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'login_form_fields';
+  info: {
+    displayName: 'login-form-field';
+    pluralName: 'login-form-fields';
+    singularName: 'login-form-field';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Field_Name: Schema.Attribute.String;
+    Field_Type: Schema.Attribute.Enumeration<
+      ['text', 'email', 'password', 'checkbox', 'button', 'submit']
+    >;
+    isActive: Schema.Attribute.Boolean;
+    Label: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::login-form-field.login-form-field'
+    > &
+      Schema.Attribute.Private;
+    Order: Schema.Attribute.Integer;
+    Placeholder: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    Required: Schema.Attribute.Boolean;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Validation_Message: Schema.Attribute.String;
+  };
+}
+
+export interface ApiLoginMessageLoginMessage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'login_messages';
+  info: {
+    displayName: 'login-message';
+    pluralName: 'login-messages';
+    singularName: 'login-message';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Action_Text: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    isActive: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::login-message.login-message'
+    > &
+      Schema.Attribute.Private;
+    Message: Schema.Attribute.String;
+    message_key: Schema.Attribute.String;
+    Message_Type: Schema.Attribute.Enumeration<['success', 'error']>;
+    publishedAt: Schema.Attribute.DateTime;
+    Show_Duration: Schema.Attribute.Decimal;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLoginPageContentLoginPageContent
+  extends Struct.SingleTypeSchema {
+  collectionName: 'login_page_contents';
+  info: {
+    displayName: 'login-page-content ';
+    pluralName: 'login-page-contents';
+    singularName: 'login-page-content';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Button_Text: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.String;
+    isActive: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::login-page-content.login-page-content'
+    > &
+      Schema.Attribute.Private;
+    Logo_Text: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    theme: Schema.Attribute.Enumeration<['light', 'dark']>;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSingleTypeOptionalSingleTypeOptional
+  extends Struct.SingleTypeSchema {
+  collectionName: 'single_type_optionals';
+  info: {
+    displayName: 'single-type-optional ';
+    pluralName: 'single-type-optionals';
+    singularName: 'single-type-optional';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Button_Color: Schema.Attribute.String;
+    Card_Background_Color: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Input_Border_Color: Schema.Attribute.String;
+    isActive: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::single-type-optional.single-type-optional'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Text_Color: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -882,6 +1021,10 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::login-form-field.login-form-field': ApiLoginFormFieldLoginFormField;
+      'api::login-message.login-message': ApiLoginMessageLoginMessage;
+      'api::login-page-content.login-page-content': ApiLoginPageContentLoginPageContent;
+      'api::single-type-optional.single-type-optional': ApiSingleTypeOptionalSingleTypeOptional;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

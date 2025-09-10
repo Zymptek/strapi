@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "single_type_optionals",
+  "info": {
+    "singularName": "single-type-optional",
+    "pluralName": "single-type-optionals",
+    "displayName": "single-type-optional "
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Button_Color": {
+      "type": "string"
+    },
+    "Text_Color": {
+      "type": "string"
+    },
+    "Card_Background_Color": {
+      "type": "string"
+    },
+    "Input_Border_Color": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean"
+    }
+  }
+}

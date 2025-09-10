@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "login_messages",
+  "info": {
+    "singularName": "login-message",
+    "pluralName": "login-messages",
+    "displayName": "login-message"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "message_key": {
+      "type": "string"
+    },
+    "Message": {
+      "type": "string"
+    },
+    "Message_Type": {
+      "type": "enumeration",
+      "enum": [
+        "success",
+        "error"
+      ]
+    },
+    "Show_Duration": {
+      "type": "decimal"
+    },
+    "Action_Text": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean"
+    }
+  }
+}
