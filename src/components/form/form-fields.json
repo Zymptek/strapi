@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_form_form_fields",
+  "info": {
+    "displayName": "form-field",
+    "icon": "inputText",
+    "description": "Single form field"
+  },
+  "attributes": {
+    "label": { "type": "string", "required": true },
+    "name": { "type": "string", "required": true },
+    "type": {
+      "type": "enumeration",
+      "enum": ["text", "email", "password", "number"],
+      "default": "text",
+      "required": true
+    },
+    "placeholder": { "type": "string" },
+    "required": { "type": "boolean", "default": false }
+  }
+}

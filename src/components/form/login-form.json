@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_form_login_forms",
+  "info": {
+    "displayName": "login-form"
+  },
+  "options": {},
+  "attributes": {
+    "fields": {
+      "type": "component",
+      "repeatable": true,
+      "component": "form.form-fields"
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Login"
+    }
+  },
+  "config": {}
+}

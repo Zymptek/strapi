@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "admin_login_pages",
+  "info": {
+    "singularName": "admin-login-page",
+    "pluralName": "admin-login-pages",
+    "displayName": "admin-login-page",
+    "description": "Configuration for the admin dashboard login page"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "description": { "type": "text" },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "form": {
+      "type": "component",
+      "repeatable": false,
+      "component": "form.login-form"
+    }
+  }
+}
