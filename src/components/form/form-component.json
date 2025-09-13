@@ -1,0 +1,64 @@
+{
+  "collectionName": "components_form_form_components",
+  "info": {
+    "displayName": "Form Component",
+    "description": "A complete form component with fields and settings"
+  },
+  "options": {
+    "timestamps": false
+  },
+  "attributes": {
+    "componentKey": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "componentTitle": {
+      "type": "string",
+      "maxLength": 200,
+      "required": false
+    },
+    "componentDescription": {
+      "type": "text"
+    },
+    "formFields": {
+      "type": "component",
+      "component": "form.form-field",
+      "repeatable": true,
+      "required": true
+    },
+    "submitButtonText": {
+      "type": "string",
+      "default": "Submit",
+      "maxLength": 50
+    },
+    "resetButtonText": {
+      "type": "string",
+      "default": "Reset",
+      "maxLength": 50
+    },
+    "showResetButton": {
+      "type": "boolean",
+      "default": false
+    },
+    "successMessage": {
+      "type": "string",
+      "default": "Form submitted successfully!",
+      "maxLength": 200
+    },
+    "errorMessage": {
+      "type": "string",
+      "default": "There was an error submitting the form. Please try again.",
+      "maxLength": 200
+    },
+    "validationMode": {
+      "type": "enumeration",
+      "default": "onSubmit",
+      "enum": [
+        "onChange",
+        "onBlur",
+        "onSubmit"
+      ]
+    }
+  }
+}

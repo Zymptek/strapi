@@ -1,0 +1,80 @@
+{
+  "collectionName": "components_form_form_fields",
+  "info": {
+    "displayName": "Form Field",
+    "description": "A simple form field component"
+  },
+  "options": {
+    "timestamps": false
+  },
+  "attributes": {
+    "fieldKey": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "fieldLabel": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "fieldType": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "email",
+        "password",
+        "number",
+        "textarea",
+        "select",
+        "checkbox"
+      ],
+      "required": true,
+      "default": "text"
+    },
+    "placeholder": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "helpText": {
+      "type": "text"
+    },
+    "isRequired": {
+      "type": "boolean",
+      "default": false
+    },
+    "isDisabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "fieldOrder": {
+      "type": "integer",
+      "default": 0
+    },
+    "selectOptions": {
+      "type": "text",
+      "description": "Enter options separated by commas (e.g., Option 1, Option 2, Option 3)"
+    },
+    "minLength": {
+      "type": "integer",
+      "description": "Minimum number of characters"
+    },
+    "maxLength": {
+      "type": "integer",
+      "description": "Maximum number of characters"
+    },
+    "minValue": {
+      "type": "integer",
+      "description": "Minimum value (for numbers)"
+    },
+    "maxValue": {
+      "type": "integer",
+      "description": "Maximum value (for numbers)"
+    },
+    "errorMessage": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Custom error message for this field"
+    }
+  }
+}

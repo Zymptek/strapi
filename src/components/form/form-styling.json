@@ -1,0 +1,53 @@
+{
+  "collectionName": "components_form_form_stylings",
+  "info": {
+    "displayName": "Form Styling",
+    "description": "Styling options for forms"
+  },
+  "options": {
+    "timestamps": false
+  },
+  "attributes": {
+    "theme": {
+      "type": "enumeration",
+      "enum": ["default", "minimal", "modern", "classic"],
+      "default": "default",
+      "description": "Form theme"
+    },
+    "primaryColor": {
+      "type": "string",
+      "description": "Primary color (hex code)"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "description": "Background color (hex code)"
+    },
+    "textColor": {
+      "type": "string",
+      "description": "Text color (hex code)"
+    },
+    "borderRadius": {
+      "type": "string",
+      "default": "4px",
+      "description": "Border radius for form elements"
+    },
+    "fontFamily": {
+      "type": "string",
+      "description": "Font family"
+    },
+    "fontSize": {
+      "type": "string",
+      "default": "16px",
+      "description": "Base font size"
+    },
+    "spacing": {
+      "type": "string",
+      "default": "16px",
+      "description": "Spacing between form elements"
+    },
+    "customCSS": {
+      "type": "text",
+      "description": "Custom CSS for the form"
+    }
+  }
+}

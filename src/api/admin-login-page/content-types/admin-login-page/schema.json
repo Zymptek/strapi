@@ -4,8 +4,8 @@
   "info": {
     "singularName": "admin-login-page",
     "pluralName": "admin-login-pages",
-    "displayName": "admin-login-page",
-    "description": "Configuration for the admin dashboard login page"
+    "displayName": "Admin Login Page",
+    "description": "Configure the admin dashboard login page"
   },
   "options": {
     "draftAndPublish": false
@@ -23,7 +23,7 @@
     "form": {
       "type": "component",
       "repeatable": false,
-      "component": "form.login-form"
+      "component": "form.form-component"
     }
   }
 }

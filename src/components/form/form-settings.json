@@ -1,0 +1,58 @@
+{
+  "collectionName": "components_form_form_settings",
+  "info": {
+    "displayName": "Form Settings",
+    "description": "Simple settings for forms"
+  },
+  "options": {
+    "timestamps": false
+  },
+  "attributes": {
+    "submitButtonText": {
+      "type": "string",
+      "default": "Submit",
+      "maxLength": 50
+    },
+    "showResetButton": {
+      "type": "boolean",
+      "default": false
+    },
+    "resetButtonText": {
+      "type": "string",
+      "default": "Reset",
+      "maxLength": 50
+    },
+    "successMessage": {
+      "type": "string",
+      "default": "Form submitted successfully!",
+      "maxLength": 200
+    },
+    "errorMessage": {
+      "type": "string",
+      "default": "There was an error submitting the form. Please try again.",
+      "maxLength": 200
+    },
+    "sendEmailNotification": {
+      "type": "boolean",
+      "default": false
+    },
+    "adminEmail": {
+      "type": "email",
+      "description": "Email address to receive form submissions"
+    },
+    "emailSubject": {
+      "type": "string",
+      "default": "New Form Submission",
+      "maxLength": 100
+    },
+    "sendConfirmationEmail": {
+      "type": "boolean",
+      "default": false
+    },
+    "confirmationEmailSubject": {
+      "type": "string",
+      "default": "Thank you for your submission",
+      "maxLength": 100
+    }
+  }
+}

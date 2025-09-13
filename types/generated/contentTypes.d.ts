@@ -377,8 +377,8 @@ export interface ApiAdminLoginPageAdminLoginPage
   extends Struct.SingleTypeSchema {
   collectionName: 'admin_login_pages';
   info: {
-    description: 'Configuration for the admin dashboard login page';
-    displayName: 'admin-login-page';
+    description: 'Configure the admin dashboard login page';
+    displayName: 'Admin Login Page';
     pluralName: 'admin-login-pages';
     singularName: 'admin-login-page';
   };
@@ -390,7 +390,7 @@ export interface ApiAdminLoginPageAdminLoginPage
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    form: Schema.Attribute.Component<'form.login-form', false>;
+    form: Schema.Attribute.Component<'form.form-component', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -400,40 +400,6 @@ export interface ApiAdminLoginPageAdminLoginPage
     logo: Schema.Attribute.Media<'images'>;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiLoginMessageLoginMessage
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'login_messages';
-  info: {
-    displayName: 'login-message';
-    pluralName: 'login-messages';
-    singularName: 'login-message';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Action_Text: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    isActive: Schema.Attribute.Boolean;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::login-message.login-message'
-    > &
-      Schema.Attribute.Private;
-    Message: Schema.Attribute.String;
-    message_key: Schema.Attribute.String;
-    Message_Type: Schema.Attribute.Enumeration<['success', 'error']>;
-    publishedAt: Schema.Attribute.DateTime;
-    Show_Duration: Schema.Attribute.Decimal;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -950,7 +916,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::admin-login-page.admin-login-page': ApiAdminLoginPageAdminLoginPage;
-      'api::login-message.login-message': ApiLoginMessageLoginMessage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
