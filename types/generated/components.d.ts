@@ -171,6 +171,94 @@ export interface FormFormStyling extends Struct.ComponentSchema {
   };
 }
 
+export interface UserProfilesStatisticsCard extends Struct.ComponentSchema {
+  collectionName: 'components_user_profiles_statistics_cards';
+  info: {
+    description: 'Configure a statistics card';
+    displayName: 'Statistics Card';
+  };
+  options: {
+    timestamps: false;
+  };
+  attributes: {
+    cardColor: Schema.Attribute.Enumeration<
+      ['green', 'blue', 'purple', 'orange', 'red']
+    > &
+      Schema.Attribute.DefaultTo<'green'>;
+    cardDescription: Schema.Attribute.String;
+    cardTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    dataType: Schema.Attribute.Enumeration<
+      [
+        'totalUsers',
+        'activeSellers',
+        'activeBuyers',
+        'pendingUsers',
+        'suspendedUsers',
+      ]
+    > &
+      Schema.Attribute.Required;
+    displayOrder: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    isVisible: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+  };
+}
+
+export interface UserProfilesTableColumn extends Struct.ComponentSchema {
+  collectionName: 'components_user_profiles_table_columns';
+  info: {
+    description: 'Configure a table column';
+    displayName: 'Table Column';
+  };
+  options: {
+    timestamps: false;
+  };
+  attributes: {
+    columnName: Schema.Attribute.String & Schema.Attribute.Required;
+    columnWidth: Schema.Attribute.String & Schema.Attribute.DefaultTo<'auto'>;
+    dataField: Schema.Attribute.Enumeration<
+      [
+        'name',
+        'email',
+        'type',
+        'company',
+        'country',
+        'status',
+        'orders',
+        'joinDate',
+      ]
+    > &
+      Schema.Attribute.Required;
+    displayOrder: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    isSortable: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    isVisible: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+  };
+}
+
+export interface UserProfilesUserForm extends Struct.ComponentSchema {
+  collectionName: 'components_user_profiles_user_forms';
+  info: {
+    description: 'Flexible form configuration for creating/editing users';
+    displayName: 'User Form';
+  };
+  options: {
+    timestamps: false;
+  };
+  attributes: {
+    dialogWidth: Schema.Attribute.Enumeration<['sm', 'md', 'lg', 'xl', '2xl']> &
+      Schema.Attribute.DefaultTo<'2xl'>;
+    errorMessage: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'There was an error. Please try again.'>;
+    formDescription: Schema.Attribute.Text;
+    formFields: Schema.Attribute.Component<'form.form-field', true> &
+      Schema.Attribute.Required;
+    formTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Add New User'>;
+    submitButtonText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Create User'>;
+    successMessage: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'User created successfully!'>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -178,6 +266,9 @@ declare module '@strapi/strapi' {
       'form.form-field': FormFormField;
       'form.form-settings': FormFormSettings;
       'form.form-styling': FormFormStyling;
+      'user-profiles.statistics-card': UserProfilesStatisticsCard;
+      'user-profiles.table-column': UserProfilesTableColumn;
+      'user-profiles.user-form': UserProfilesUserForm;
     }
   }
 }

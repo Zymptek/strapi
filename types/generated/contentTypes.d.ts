@@ -406,6 +406,58 @@ export interface ApiAdminLoginPageAdminLoginPage
   };
 }
 
+export interface ApiUserProfilesUserProfiles extends Struct.SingleTypeSchema {
+  collectionName: 'user_profiles_pages';
+  info: {
+    description: 'Simple configuration for the user profiles page';
+    displayName: 'User Profiles Page';
+    pluralName: 'user-profiles-pages';
+    singularName: 'user-profiles';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    createUserForm: Schema.Attribute.Component<
+      'user-profiles.user-form',
+      false
+    >;
+    editUserForm: Schema.Attribute.Component<'user-profiles.user-form', false>;
+    enableAddUser: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    enableExport: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    enableSearch: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::user-profiles.user-profiles'
+    > &
+      Schema.Attribute.Private;
+    pageDescription: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Manage buyers and sellers across your marketplace'>;
+    pageTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'User Profiles'>;
+    publishedAt: Schema.Attribute.DateTime;
+    showStatisticsCards: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
+    statisticsCards: Schema.Attribute.Component<
+      'user-profiles.statistics-card',
+      true
+    >;
+    tableColumns: Schema.Attribute.Component<
+      'user-profiles.table-column',
+      true
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    usersPerPage: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<10>;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -916,6 +968,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::admin-login-page.admin-login-page': ApiAdminLoginPageAdminLoginPage;
+      'api::user-profiles.user-profiles': ApiUserProfilesUserProfiles;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

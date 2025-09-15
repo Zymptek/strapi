@@ -1,0 +1,74 @@
+{
+  "kind": "singleType",
+  "collectionName": "user_profiles_pages",
+  "info": {
+    "singularName": "user-profiles",
+    "pluralName": "user-profiles-pages",
+    "displayName": "User Profiles Page",
+    "description": "Simple configuration for the user profiles page"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pageTitle": { 
+      "type": "string", 
+      "required": true,
+      "default": "User Profiles"
+    },
+    "pageDescription": { 
+      "type": "text",
+      "default": "Manage buyers and sellers across your marketplace"
+    },
+    "enableSearch": {
+      "type": "boolean",
+      "default": true,
+      "description": "Show search box"
+    },
+    "enableExport": {
+      "type": "boolean",
+      "default": true,
+      "description": "Show export button"
+    },
+    "enableAddUser": {
+      "type": "boolean",
+      "default": true,
+      "description": "Show add user button"
+    },
+    "usersPerPage": {
+      "type": "integer",
+      "default": 10,
+      "description": "Number of users to show per page"
+    },
+    "showStatisticsCards": {
+      "type": "boolean",
+      "default": true,
+      "description": "Show the statistics cards at the top"
+    },
+    "createUserForm": {
+      "type": "component",
+      "repeatable": false,
+      "component": "user-profiles.user-form",
+      "description": "Settings for the create user form"
+    },
+    "editUserForm": {
+      "type": "component",
+      "repeatable": false,
+      "component": "user-profiles.user-form",
+      "description": "Settings for the edit user form"
+    },
+    "tableColumns": {
+      "type": "component",
+      "component": "user-profiles.table-column",
+      "repeatable": true,
+      "description": "Configure which columns to show in the table"
+    },
+    "statisticsCards": {
+      "type": "component",
+      "component": "user-profiles.statistics-card",
+      "repeatable": true,
+      "description": "Configure the statistics cards"
+    }
+  }
+}

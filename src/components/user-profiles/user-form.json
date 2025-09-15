@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_user_profiles_user_forms",
+  "info": {
+    "displayName": "User Form",
+    "description": "Flexible form configuration for creating/editing users"
+  },
+  "options": {
+    "timestamps": false
+  },
+  "attributes": {
+    "formTitle": {
+      "type": "string",
+      "default": "Add New User",
+      "description": "Title shown in the form dialog"
+    },
+    "formDescription": {
+      "type": "text",
+      "description": "Description shown in the form dialog"
+    },
+    "submitButtonText": {
+      "type": "string",
+      "default": "Create User",
+      "description": "Text on the submit button"
+    },
+    "successMessage": {
+      "type": "string",
+      "default": "User created successfully!",
+      "description": "Message shown when user is created"
+    },
+    "errorMessage": {
+      "type": "string",
+      "default": "There was an error. Please try again.",
+      "description": "Message shown when there's an error"
+    },
+    "dialogWidth": {
+      "type": "enumeration",
+      "enum": ["sm", "md", "lg", "xl", "2xl"],
+      "default": "2xl",
+      "description": "Width of the form dialog"
+    },
+    "formFields": {
+      "type": "component",
+      "component": "form.form-field",
+      "repeatable": true,
+      "required": true,
+      "description": "Configure form fields dynamically"
+    }
+  }
+}

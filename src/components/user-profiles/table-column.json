@@ -1,0 +1,52 @@
+{
+  "collectionName": "components_user_profiles_table_columns",
+  "info": {
+    "displayName": "Table Column",
+    "description": "Configure a table column"
+  },
+  "options": {
+    "timestamps": false
+  },
+  "attributes": {
+    "columnName": {
+      "type": "string",
+      "required": true,
+      "description": "Column name (e.g., Name, Email, Company)"
+    },
+    "dataField": {
+      "type": "enumeration",
+      "enum": [
+        "name",
+        "email", 
+        "type",
+        "company",
+        "country",
+        "status",
+        "orders",
+        "joinDate"
+      ],
+      "required": true,
+      "description": "Which data field this column shows"
+    },
+    "isVisible": {
+      "type": "boolean",
+      "default": true,
+      "description": "Show this column in the table"
+    },
+    "isSortable": {
+      "type": "boolean",
+      "default": false,
+      "description": "Allow sorting by this column"
+    },
+    "columnWidth": {
+      "type": "string",
+      "default": "auto",
+      "description": "Column width (e.g., 200px, auto, 20%)"
+    },
+    "displayOrder": {
+      "type": "integer",
+      "default": 0,
+      "description": "Order to display columns (0 = first)"
+    }
+  }
+}

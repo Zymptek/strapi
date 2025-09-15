@@ -1,0 +1,55 @@
+{
+  "collectionName": "components_user_profiles_statistics_cards",
+  "info": {
+    "displayName": "Statistics Card",
+    "description": "Configure a statistics card"
+  },
+  "options": {
+    "timestamps": false
+  },
+  "attributes": {
+    "cardTitle": {
+      "type": "string",
+      "required": true,
+      "description": "Card title (e.g., Total Users, Active Sellers)"
+    },
+    "cardDescription": {
+      "type": "string",
+      "description": "Card description (e.g., +12.5% from last month)"
+    },
+    "dataType": {
+      "type": "enumeration",
+      "enum": [
+        "totalUsers",
+        "activeSellers", 
+        "activeBuyers",
+        "pendingUsers",
+        "suspendedUsers"
+      ],
+      "required": true,
+      "description": "What data this card shows"
+    },
+    "cardColor": {
+      "type": "enumeration",
+      "enum": [
+        "green",
+        "blue", 
+        "purple",
+        "orange",
+        "red"
+      ],
+      "default": "green",
+      "description": "Card color theme"
+    },
+    "isVisible": {
+      "type": "boolean",
+      "default": true,
+      "description": "Show this card"
+    },
+    "displayOrder": {
+      "type": "integer",
+      "default": 0,
+      "description": "Order to display cards (0 = first)"
+    }
+  }
+}
